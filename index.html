@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Interactive Webpage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Interactive Webpage</h1>
+    <p>Explore simple HTML, CSS, and JavaScript in action!</p>
+  </header>
+
+  <main>
+    <section class="about">
+      <h2>About This Page</h2>
+      <p>
+        This webpage demonstrates basic structure, styling, and interactivity.
+        You can click buttons to change colors, reveal hidden messages, and more.
+      </p>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Ocean view" />
+    </section>
+
+    <section class="learn">
+      <h2>Learn More</h2>
+      <p>
+        Learn more about web development at 
+        <a href="https://developer.mozilla.org/en-US/" target="_blank">
+          MDN Web Docs
+        </a>.
+      </p>
+    </section>
+
+    <section class="interactive">
+      <h2>Try It Out!</h2>
+      <button id="alertButton">Show Alert</button>
+      <button id="colorButton">Change Background Color</button>
+      <button id="toggleButton">Toggle Secret Message</button>
+
+      <p id="secretMessage" style="display:none; margin-top:10px;">
+        🎉 Surprise! You found the hidden message!
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Interactive Webpage</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
