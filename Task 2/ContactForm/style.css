@@ -1,4 +1,4 @@
-/* Layout */
+
 body {
   background: linear-gradient(130deg, #5f2eea, #3ba3ff);
   height: 100vh;
@@ -15,7 +15,7 @@ body {
   padding: 20px;
 }
 
-/* Card */
+
 .card {
   background: rgba(255, 255, 255, 0.95);
   padding: 35px 30px;
@@ -38,7 +38,7 @@ h2 {
   font-size: 22px;
 }
 
-/* Icon + Floating Field */
+
 .field {
   position: relative;
   margin-bottom: 28px;
@@ -88,7 +88,7 @@ h2 {
   color: #7b44ff;
 }
 
-/* Error styling */
+
 .error-msg {
   display: none;
   font-size: 13px;
@@ -107,7 +107,7 @@ h2 {
   border-color: #e63946 !important;
 }
 
-/* Button */
+
 button {
   width: 100%;
   padding: 14px;

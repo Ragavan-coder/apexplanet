@@ -125,7 +125,7 @@ body {
   transform: scale(1.06);
 }
 
-/* Text reveal animation */
+
 .reveal {
   display: inline-block;
   transform: translateY(40px);
@@ -140,7 +140,7 @@ body {
   }
 }
 
-/* ===== Feature Cards ===== */
+
 .feature-section {
   padding: 80px 40px;
 }
@@ -177,7 +177,6 @@ body {
   box-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
-/* 3D tilt */
 .tilt:hover {
   transform: rotateX(12deg) rotateY(-12deg) scale(1.08);
 }
