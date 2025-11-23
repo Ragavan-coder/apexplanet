@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Contact Form</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <form id="contactForm" class="card">
+      <h2><i class="fa-solid fa-envelope"></i> Contact Us</h2>
+
+      <div class="field">
+        <i class="fa-solid fa-user icon"></i>
+        <input type="text" id="name" required placeholder=" ">
+        <label for="name">Name</label>
+        <span class="error-msg" id="nameError">Name is required.</span>
+      </div>
+
+      <div class="field">
+        <i class="fa-solid fa-at icon"></i>
+        <input type="email" id="email" required placeholder=" ">
+        <label for="email">Email</label>
+        <span class="error-msg" id="emailError">Enter a valid email.</span>
+      </div>
+
+      <div class="field">
+        <i class="fa-solid fa-message icon"></i>
+        <textarea id="message" rows="4" required placeholder=" "></textarea>
+        <label for="message">Message</label>
+        <span class="error-msg" id="messageError">Message is required.</span>
+      </div>
+
+      <button type="submit">
+        <i class="fa-solid fa-paper-plane"></i> Send Message
+      </button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

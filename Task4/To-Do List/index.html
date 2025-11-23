@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advanced To-Do Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>To-Do Dashboard</h1>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Search tasks..." aria-label="Search tasks">
+        </div>
+        <div class="view-controls">
+          <select id="filterSelect" aria-label="Filter tasks">
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="completed">Completed</option>
+            <option value="overdue">Overdue</option>
+          </select>
+
+          <select id="sortSelect" aria-label="Sort tasks">
+            <option value="created_desc">Newest</option>
+            <option value="created_asc">Oldest</option>
+            <option value="due_asc">Due soon</option>
+            <option value="priority_desc">Priority</option>
+            <option value="alpha_asc">A → Z</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <!-- Left column: input + stats -->
+      <section class="panel add-panel">
+        <form id="taskForm" class="task-form" autocomplete="off">
+          <div class="row">
+            <input id="taskText" name="taskText" placeholder="Add a new task..." required />
+            <button id="addBtn" type="submit" title="Add task">Add</button>
+          </div>
+
+          <div class="row small">
+            <label>
+              Priority
+              <select id="prioritySelect" aria-label="Priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+
+            <label>
+              Category
+              <input id="categoryInput" list="categoryList" placeholder="Category (e.g. Work)" />
+              <datalist id="categoryList"></datalist>
+            </label>
+
+            <label>
+              Due
+              <input id="dueInput" type="date" />
+            </label>
+          </div>
+        </form>
+
+        <div class="stats panel">
+          <div class="stats-row">
+            <div>
+              <div class="stat-number" id="totalCount">0</div>
+              <div class="stat-label">Total</div>
+            </div>
+            <div>
+              <div class="stat-number" id="completedCount">0</div>
+              <div class="stat-label">Completed</div>
+            </div>
+            <div>
+              <div class="stat-number" id="remainingCount">0</div>
+              <div class="stat-label">Remaining</div>
+            </div>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="progress-bar-bg" aria-hidden="true">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <div class="progress-label"><span id="progressPercent">0%</span> done</div>
+          </div>
+
+          <div class="quick-actions">
+            <button id="clearCompleted" class="btn ghost">Clear Completed</button>
+            <button id="clearAll" class="btn danger">Clear All</button>
+          </div>
+        </div>
+
+        <div class="panel categories-panel">
+          <h3>Categories</h3>
+          <div id="categoriesWrap" class="categories-wrap"></div>
+        </div>
+      </section>
+
+      <!-- Right column: task lists -->
+      <section class="panel list-panel">
+        <div class="list-header">
+          <h2 id="listTitle">Tasks</h2>
+          <div class="list-actions">
+            <label class="small-toggle">
+              <input type="checkbox" id="showCompletedToggle"> Show completed
+            </label>
+          </div>
+        </div>
+
+        <ul id="taskList" class="task-list" aria-live="polite"></ul>
+
+        <div class="panel extra-lists">
+          <div>
+            <h3>Remaining</h3>
+            <ul id="remainingList" class="mini-list"></ul>
+          </div>
+          <div>
+            <h3>Completed</h3>
+            <ul id="completedList" class="mini-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span id="footerInfo">Saved locally • No account required</span>
+      <span id="year"></span>
+    </footer>
+  </div>
+
+  <template id="taskTemplate">
+    <li class="task">
+      <div class="task-left">
+        <button class="toggle-btn" aria-label="Toggle complete">◻</button>
+        <div class="task-body">
+          <div class="task-title"></div>
+          <div class="task-meta">
+            <span class="task-category"></span>
+            <span class="task-due"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="task-right">
+        <div class="priority-badge"></div>
+        <button class="edit-btn" title="Edit">✎</button>
+        <button class="delete-btn" title="Delete">🗑</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

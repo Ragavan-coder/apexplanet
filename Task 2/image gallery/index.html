@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Image Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Dynamic Image Gallery</h1>
+    <p>Add and remove images interactively</p>
+  </header>
+
+  <section class="add-section">
+    <input type="text" id="imgUrl" placeholder="Enter Image URL">
+    <button id="addBtn">Add Image</button>
+  </section>
+
+  <div class="gallery" id="gallery"></div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <img id="lightboxImg" src="" alt="Enlarged image" title="Enlarged image">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

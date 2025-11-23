@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RAGAVAN — Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet (save as style.css) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">RAGAVAN S</a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
+        <span class="hamburger" aria-hidden="true"></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="primaryNav" class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about" data-nav>About</a></li>
+          <li><a href="#projects" data-nav>Projects</a></li>
+          <li><a href="#contact" data-nav>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero section reveal" id="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Hi, I'm Jane — a Frontend Developer</h1>
+          <p>I build responsive, interactive web interfaces using HTML, CSS, and JavaScript. I focus on clarity, performance, and UX.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-photo" aria-hidden="true">
+          <img src="ragavan .jpeg" alt="Profile photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container section about reveal">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I design and build UI components and full websites that are performant, accessible, and delightful to use. I enjoy turning complex requirements into simple interfaces and improving the user experience.</p>
+
+          <ul class="skills">
+            <li>HTML & semantic markup</li>
+            <li>Responsive CSS (Flexbox, Grid)</li>
+            <li>Vanilla JavaScript, DOM, Fetch API</li>
+            <li>Performance & accessibility</li>
+          </ul>
+        </div>
+
+        <aside class="about-stats" aria-hidden="true">
+          <div class="stat">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Years experience</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Projects shipped</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Client satisfaction*</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="container section projects reveal">
+      <h2 class="section-title">Projects</h2>
+
+      <div id="projectsGrid" class="projects-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container section contact reveal">
+      <h2 class="section-title">Contact</h2>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="name">Name <span class="req">*</span></label>
+          <input id="name" name="name" type="text" required />
+          <div class="error" id="nameError" aria-live="polite"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email <span class="req">*</span></label>
+          <input id="email" name="email" type="email" required />
+          <div class="error" id="emailError" aria-live="polite"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message <span class="req">*</span></label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+          <div class="error" id="messageError" aria-live="polite"></div>
+        </div>
+
+        <div class="form-row actions">
+          <button type="submit" class="btn">Send Message</button>
+          <div id="formSuccess" class="form-success" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- PROJECT MODAL -->
+  <div id="projectModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button id="modalClose" class="modal-close" aria-label="Close project details">✕</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <div id="modalLinks" class="modal-links"></div>
+      <div id="modalImageWrap" class="modal-image"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Jane Doe — Built with HTML, CSS, JS.</small>
+    </div>
+  </footer>
+
+  <!-- Script (save as script.js) -->
+  <script src="script.js"></script>
+</body>
+</html>

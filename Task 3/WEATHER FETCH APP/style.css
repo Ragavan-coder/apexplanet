@@ -1,0 +1,214 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa7bf;
+  --accent:#5fd3ff;
+  --glass: rgba(255,255,255,0.04);
+  --radius:14px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: linear-gradient(180deg,#071029 0%, #0f1724 60%);
+  color: #e6eef9;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:24px;
+}
+
+/* app layout */
+.app{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* top bar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.brand{
+  font-weight:700;
+  font-size:1.3rem;
+  color:var(--accent);
+  letter-spacing:0.4px;
+}
+
+/* controls */
+.controls{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  width:100%;
+}
+
+.controls input{
+  flex:1;
+  min-width:160px;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
+  color:var(--accent);
+  outline:none;
+  font-size:0.95rem;
+}
+
+.btn{
+  padding:9px 12px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  background: linear-gradient(180deg,#2a7ecf,#1f6db3);
+  color:white;
+  font-weight:600;
+}
+
+.btn.secondary{
+  background: linear-gradient(180deg,#2d3142,#20232b);
+  color:var(--muted);
+}
+
+.btn.ghost{
+  background:transparent;
+  color:var(--muted);
+  border:1px dashed rgba(255,255,255,0.04);
+}
+
+/* main grid */
+.main{
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:18px;
+  align-items:start;
+}
+
+/* cards */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow: 0 8px 30px rgba(2,8,23,0.6);
+}
+
+/* current weather */
+.current{
+  display:flex;
+  gap:16px;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.current-left{flex:1}
+.current-right{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  min-width:140px;
+}
+
+.location h2{
+  margin:0;
+  font-size:1.35rem;
+  color:white;
+}
+.location small{ color:var(--muted) }
+
+.temp{ font-size:2.8rem; font-weight:700; margin-top:8px; color:var(--accent) }
+.desc{ color:var(--muted); margin-top:6px; font-weight:600 }
+
+.meta-row{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+  color:var(--muted);
+  font-size:0.9rem;
+  flex-wrap:wrap;
+}
+
+.icon-large{
+  font-size:48px;
+  filter: drop-shadow(0 6px 20px rgba(95,211,255,0.08));
+}
+
+.feels{ color:var(--muted); margin-top:8px }
+
+/* hourly chart */
+.hourly canvas{ width:100% !important; max-width:100% }
+
+/* daily grid */
+.daily-grid{
+  display:grid;
+  grid-template-columns: repeat( auto-fit, minmax(120px,1fr) );
+  gap:12px;
+  margin-top:10px;
+}
+
+.day-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  border-radius:12px;
+  padding:12px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+.day-card .date{ font-size:0.9rem; color:var(--muted) }
+.day-card .icon{ font-size:24px; margin:8px 0 }
+.day-card .temps{ font-weight:700; color:var(--accent) }
+
+/* footer */
+.footer{ text-align:center; margin-top:18px; color:var(--muted); font-size:0.85rem }
+
+/* loader overlay */
+.loader{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:14px;
+  background: linear-gradient(180deg, rgba(3,6,15,0.6), rgba(1,2,6,0.6));
+  z-index:9999;
+  color:white;
+}
+
+.loader.hidden{ display:none }
+
+.spinner{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  border:6px solid rgba(255,255,255,0.08);
+  border-top-color:var(--accent);
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg)} }
+
+.loader-text{ color:var(--muted) }
+
+/* responsive */
+@media (max-width: 980px){
+  .main{ grid-template-columns:1fr; }
+  .current{ flex-direction:column; align-items:flex-start; gap:12px; }
+  .current-right{ align-self:flex-end; }
+  .controls{ flex-direction:column; gap:8px; align-items:stretch; }
+  .controls input{ width:100% }
+  .topbar{ gap:10px; align-items:stretch; }
+}
+
+@media (max-width:420px){
+  body{ padding:14px; }
+  .brand{ font-size:1.05rem }
+  .controls input{ font-size:0.95rem; padding:10px }
+  .btn{ padding:8px 10px; font-size:0.9rem }
+}

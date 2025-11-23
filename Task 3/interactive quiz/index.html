@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="quiz-container">
+
+  <div class="quiz-box" id="quizBox">
+    <h2 id="questionText"></h2>
+
+    <div class="meta">
+      <span id="questionNumber"></span>
+      <span id="liveScore"></span>
+    </div>
+
+    <ul id="optionsList"></ul>
+
+    <button id="nextBtn" class="next-btn" disabled>Next</button>
+  </div>
+
+  <div class="result-box" id="resultBox">
+    <h2>Quiz Completed</h2>
+    <p id="scoreText"></p>
+    <button id="restartBtn" class="restart-btn">Restart Quiz</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

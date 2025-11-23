@@ -1,0 +1,129 @@
+/* Layout */
+body {
+  background: linear-gradient(130deg, #5f2eea, #3ba3ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 430px;
+  padding: 20px;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 35px 30px;
+  border-radius: 18px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+  animation: fadeIn 0.7s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+  font-size: 22px;
+}
+
+/* Icon + Floating Field */
+.field {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.field .icon {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-size: 18px;
+  color: #777;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 10px 10px 10px 28px;
+  border: none;
+  border-bottom: 2px solid #bbb;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #7b44ff;
+}
+
+.field label {
+  position: absolute;
+  top: 10px;
+  left: 28px;
+  color: #777;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label,
+.field textarea:focus + label,
+.field textarea:not(:placeholder-shown) + label {
+  top: -12px;
+  font-size: 12px;
+  color: #7b44ff;
+}
+
+/* Error styling */
+.error-msg {
+  display: none;
+  font-size: 13px;
+  color: #e63946;
+  margin-top: 6px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.error-visible {
+  display: block;
+  opacity: 1;
+}
+
+.error-field {
+  border-color: #e63946 !important;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #7b44ff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+button:hover {
+  background: #6220ff;
+}

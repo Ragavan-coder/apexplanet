@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Dashboard — Advanced</title>
+
+  <!-- Chart.js for hourly chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">WeatherDesk</div>
+
+      <div class="controls">
+        <input id="cityInput" type="text" placeholder="Enter city (e.g. London)" />
+        <button id="searchBtn" class="btn">Search</button>
+        <button id="gpsBtn" class="btn secondary" title="Use my location">📍</button>
+        <button id="clearBtn" class="btn ghost" title="Clear saved city">Clear</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="current card" id="currentBox">
+        <div class="current-left">
+          <div class="location">
+            <h2 id="cityName">—</h2>
+            <small id="localTime">—</small>
+          </div>
+          <div class="temp" id="currentTemp">—°C</div>
+          <div class="desc" id="currentDesc">—</div>
+
+          <div class="meta-row">
+            <div>Wind: <span id="wind">—</span></div>
+            <div>Wind Dir: <span id="windDir">—</span></div>
+            <div>Pressure: <span id="pressure">—</span></div>
+          </div>
+
+          <div class="meta-row">
+            <div>Humidity: <span id="humidity">—</span></div>
+            <div>Visibility: <span id="visibility">—</span></div>
+            <div>Last update: <span id="updated">—</span></div>
+          </div>
+        </div>
+
+        <div class="current-right">
+          <div class="icon-large" id="currentIcon">☀️</div>
+          <div class="feels">Feels: <span id="feels">—°C</span></div>
+        </div>
+      </section>
+
+      <section class="hourly card">
+        <h3>Hourly (next 24h)</h3>
+        <canvas id="hourlyChart" height="120"></canvas>
+      </section>
+
+      <section class="daily card">
+        <h3>7-Day Forecast</h3>
+        <div id="dailyGrid" class="daily-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Data provided by Open-Meteo (geocoding + forecast) • No API key required</small>
+    </footer>
+  </div>
+
+  <!-- Loader overlay -->
+  <div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+    <div class="loader-text">Loading…</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
